@@ -9,7 +9,7 @@
       nav
       dense
     >
-      <v-list-item-group>
+      <!-- <v-list-item-group>
         <v-list-item>
           <v-list-item-title>Foo</v-list-item-title>
         </v-list-item>
@@ -25,7 +25,7 @@
         <v-list-item>
           <v-list-item-title>Buzz</v-list-item-title>
         </v-list-item>
-      </v-list-item-group>
+      </v-list-item-group> -->
     </v-list>
   </v-navigation-drawer>
 </template>
