@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter, { RouteConfig } from 'vue-router';
+import Auth from '../components/Auth/index.vue';
 
 Vue.use(VueRouter);
 
@@ -7,6 +8,12 @@ const routes: Array<RouteConfig> = [
   {
     path: '/',
     name: 'Home',
+  },
+  {
+    path: '/auth/:component',
+    name: 'Auth',
+    component: Auth,
+    props: true,
   },
 ];
 

@@ -9,5 +9,8 @@ export default Vue.extend({
     setNavVis() {
       this.$store.commit('setNavVisibility');
     },
+    login() {
+      this.$router.push('/auth/Login');
+    },
   },
 });

@@ -21,6 +21,7 @@
       small
       outlined
       class="ml-12"
+      @click="login"
     >
       Login
     </v-btn>

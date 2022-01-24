@@ -3,7 +3,9 @@
     <Header />
     <Nav />
     <v-main>
-      <router-view/>
+      <v-container>
+        <router-view/>
+      </v-container>
     </v-main>
     <Footer />
   </v-app>
@@ -29,7 +31,17 @@ export default Vue.extend({
 
 <style lang="scss">
   :root{
+    --accent: #00796B;
+    --accent-light: #80CBC4;
   }
   :root.theme--dark{
+    --accent: #00897B;
+  }
+  .filtered-img{
+    filter: blur(1px);
+    transform: scale(1.2);
+  }
+  a{
+    color: var(--accent) !important;
   }
 </style>
