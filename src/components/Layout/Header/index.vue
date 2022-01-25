@@ -11,6 +11,17 @@
       color="var(--color-1)"
       icon
       class="ma-1"
+      @click="changeLang"
+    >
+      <v-icon>
+        mdi-web
+      </v-icon>
+    </v-btn>
+    <v-btn
+      small
+      color="var(--color-1)"
+      icon
+      class="ma-1 ml-11"
       @click="changeTheme"
     >
       <v-icon>
@@ -24,7 +35,7 @@
       class="ml-12"
       @click="login"
     >
-      Sing In
+      {{ $t('LOGIN') }}
     </v-btn>
     <v-btn
       v-if="user"
@@ -33,7 +44,7 @@
       class="ml-12"
       @click="logout"
     >
-      Sing Out
+      {{ $t('LOGOUT') }}
     </v-btn>
   </v-app-bar>
 </template>

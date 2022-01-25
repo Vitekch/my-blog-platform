@@ -36,7 +36,7 @@
     "tests/**/*.ts",
     "tests/**/*.js",
     "tests/**/*.tsx"
-, "src/locale/locale.js"  ],
+, "src/locale/locale.ts"  ],
   "exclude": [
     "node_modules"
   ]
