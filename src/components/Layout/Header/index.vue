@@ -18,12 +18,22 @@
       </v-icon>
     </v-btn>
     <v-btn
+      v-if="!user"
       small
       outlined
       class="ml-12"
       @click="login"
     >
-      Login
+      Sing In
+    </v-btn>
+    <v-btn
+      v-if="user"
+      small
+      outlined
+      class="ml-12"
+      @click="logout"
+    >
+      Sing Out
     </v-btn>
   </v-app-bar>
 </template>

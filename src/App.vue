@@ -22,7 +22,9 @@ export default Vue.extend({
   components: {
     Header, Nav, Footer,
   },
-
+  created() {
+    this.$store.commit('setUser');
+  },
   data: () => ({
     nav: false,
   }),

@@ -14,6 +14,7 @@ const routes: Array<RouteConfig> = [
     name: 'Auth',
     component: Auth,
     props: true,
+    beforeEnter: (to, from, next) => (localStorage.getItem('user') ? next(false) : next()),
   },
 ];
 

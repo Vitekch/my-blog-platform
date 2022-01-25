@@ -1,4 +1,5 @@
 import Vue from 'vue';
+import { registerPayload } from '@/types/auth-types';
 
 export default Vue.extend({
   name: 'Registration',
@@ -18,6 +19,16 @@ export default Vue.extend({
     },
     comparePasswords(v: string) {
       return this.password === v || 'Passwords must be equal!';
+    },
+    async registration() {
+      const form: any = this.$refs.regForm;
+      if (form.validate()) {
+        const userData: registerPayload = {
+          username: this.username,
+          password: this.password,
+        };
+        await this.$store.dispatch('registration', userData).catch((err) => console.log(err));
+      }
     },
   },
 });

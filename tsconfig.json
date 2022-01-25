@@ -4,7 +4,8 @@
     "module": "esnext",
     "strict": true,
     "jsx": "preserve",
-    "importHelpers": true,
+    "noImplicitAny": false,
+    "importHelpers": false,
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "skipLibCheck": true,
@@ -29,11 +30,13 @@
   },
   "include": [
     "src/**/*.ts",
+    "src/**/*.js",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
+    "tests/**/*.js",
     "tests/**/*.tsx"
-  ],
+, "src/locale/locale.js"  ],
   "exclude": [
     "node_modules"
   ]

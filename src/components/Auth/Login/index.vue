@@ -43,6 +43,7 @@
             color="var(--accent)"
             depressed
             class="text-none"
+            :loading="loading"
         >
             Sign In
         </v-btn>

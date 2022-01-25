@@ -1,6 +1,10 @@
 <template>
   <div>
-    <v-form @submit.prevent="login" class="d-flex flex-column mx-10 mt-10 mb-10">
+    <v-form
+      @submit.prevent="registration"
+      ref="regForm"
+      class="d-flex flex-column mx-10 mt-10 mb-10"
+    >
       <v-text-field
         v-model="username"
         dense
@@ -24,7 +28,7 @@
         <v-btn
             slot="append"
             icon
-            @click="[switchPasswordHide]"
+            @click="switchPasswordHide"
         >
           <v-icon>
             {{ isPasswordHide ? 'mdi-eye' : 'mdi-eye-off' }}

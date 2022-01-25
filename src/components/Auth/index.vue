@@ -1,5 +1,5 @@
 <template>
-<div class="d-flex justify-center align-center">
+<div class="d-flex justify-center align-center" style="height: 80vh">
   <v-card width="40%">
     <v-app-bar
       dark
