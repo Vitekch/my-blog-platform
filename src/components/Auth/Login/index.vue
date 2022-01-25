@@ -6,7 +6,7 @@
         dense
         required
         :rules="[ rules.required ]"
-        label="Username"
+        :label="$t('USERNAME')"
         class="mb-2"
         color="var(--accent)"
       >
@@ -17,7 +17,7 @@
         dense
         required
         :rules="[ rules.required, rules.length  ]"
-        label="Password"
+        :label="$t('PASSWORD')"
         class="mb-5"
         color="var(--accent)"
       >
@@ -33,7 +33,10 @@
       </v-text-field>
       <div class="d-flex align-end">
         <span class="text-caption text--secondary">
-            Don't have an account? <router-link to="/auth/SignUp">Create now!</router-link>
+            {{ $t('HAVENT_AN_ACCOUNT') }}
+            <router-link to="/auth/Registration">
+              {{ $t('REGISTRATION_NOW') }}!
+            </router-link>
         </span>
         <v-spacer></v-spacer>
         <v-btn
@@ -45,7 +48,7 @@
             class="text-none"
             :loading="loading"
         >
-            Sign In
+            {{ $t('LOGIN') }}
         </v-btn>
       </div>
     </v-form>

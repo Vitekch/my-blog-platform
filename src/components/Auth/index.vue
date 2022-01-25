@@ -17,7 +17,7 @@
         ></v-img>
       </template>
 
-      <v-app-bar-title><p class="text-h2">{{ component | camelCaseSplit }}</p></v-app-bar-title>
+      <v-app-bar-title><p class="text-h2">{{ title }}</p></v-app-bar-title>
     </v-app-bar>
     <v-slide-y-reverse-transition hide-on-leave>
     <component :is="component"></component>

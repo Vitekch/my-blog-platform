@@ -10,7 +10,7 @@
         dense
         required
         :rules="[rules.required]"
-        label="Username"
+        :label="$t('USERNAME')"
         class="mb-2"
         color="var(--accent)"
       >
@@ -23,7 +23,7 @@
               dense
               required
               :rules="[rules.required]"
-              label="Fist Name"
+              :label="$t('FIRST_N')"
               color="var(--accent)"
             >
             </v-text-field>
@@ -32,7 +32,7 @@
             <v-text-field
               v-model="lastName"
               dense
-              label="Last Name"
+              :label="$t('LAST_N')"
               color="var(--accent)"
             >
             </v-text-field>
@@ -42,15 +42,15 @@
           <v-col cols="12" class="pt-0">
             <v-radio-group
               v-model="gender"
-              label="Gender"
+              :label="$t('GENDER')"
             >
               <v-radio
-                label="Female"
+                :label="$t('FEMALE')"
                 value="female"
                 color="var(--accent)"
               ></v-radio>
               <v-radio
-                label="Male"
+                :label="$t('MALE')"
                 value="male"
                 color="var(--accent)"
               ></v-radio>
@@ -64,7 +64,7 @@
         dense
         required
         :rules="[rules.length, rules.required]"
-        label="Password"
+        :label="$t('PASSWORD')"
         class="mb-5"
         color="var(--accent)"
       >
@@ -84,25 +84,27 @@
         dense
         :rules="[comparePasswords]"
         required
-        label="Confirm Password"
+        :label="$t('CONFIRM_P')"
         class="mb-5"
         color="var(--accent)"
       >
       </v-text-field>
       <div class="d-flex align-end">
         <span class="text-caption text--secondary">
-            Already have an account? <router-link to="/auth/SignIn">Sign In!</router-link>
+            {{ $t('HAVE_AN_ACCOUNT') }}
+            <router-link to="/auth/Login">
+              {{ $t('LOGIN') }}!
+            </router-link>
         </span>
         <v-spacer></v-spacer>
         <v-btn
-            width="70px"
             type="submit"
             dark
             color="var(--accent)"
             depressed
             class="text-none"
         >
-            Submit
+            {{ $t('SUBMIT') }}
         </v-btn>
       </div>
     </v-form>
