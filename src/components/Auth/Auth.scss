@@ -1,0 +1,11 @@
+.header {
+ ::v-deep {
+  .v-toolbar__content {
+   display: flex !important;
+   align-items: center !important;
+  }
+  .v-app-bar-title__content {
+   width: auto !important;
+  }
+ }
+}
