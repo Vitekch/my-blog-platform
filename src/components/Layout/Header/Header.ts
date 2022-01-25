@@ -15,11 +15,11 @@ export default Vue.extend({
       this.$store.commit('setNavVisibility');
     },
     login() {
-      this.$router.push('/auth/Login');
+      this.$router.push('/auth/SignIn');
     },
     async logout() {
       await this.$store.dispatch('logout');
-      this.$router.push('/auth/Login');
+      this.$router.push('/auth/SignIn');
     },
   },
 });

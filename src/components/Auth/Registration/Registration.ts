@@ -7,6 +7,9 @@ export default Vue.extend({
     isPasswordHide: true,
     username: '',
     password: '',
+    firstName: '',
+    lastName: '',
+    gender: 'male',
     confirmPassword: '',
     rules: {
       required: (v: string) => !!v || 'Field is required!',
@@ -26,6 +29,9 @@ export default Vue.extend({
         const userData: registerPayload = {
           username: this.username,
           password: this.password,
+          firstName: this.firstName,
+          lastName: this.lastName,
+          gender: this.gender,
         };
         await this.$store.dispatch('registration', userData).catch((err) => console.log(err));
       }

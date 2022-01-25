@@ -33,7 +33,7 @@
       </v-text-field>
       <div class="d-flex align-end">
         <span class="text-caption text--secondary">
-            Don't have an account? <router-link to="/auth/Registration">Create now!</router-link>
+            Don't have an account? <router-link to="/auth/SignUp">Create now!</router-link>
         </span>
         <v-spacer></v-spacer>
         <v-btn
