@@ -1,19 +1,26 @@
 import Vue from 'vue';
 import { registerPayload } from '@/types/auth-types';
+import i18n from '@/plugins/i18n';
 
 export default Vue.extend({
   name: 'Registration',
   data: () => ({
+    loading: false,
     isPasswordHide: true,
     username: '',
     password: '',
     firstName: '',
     lastName: '',
+    email: '',
     gender: 'male',
     confirmPassword: '',
     rules: {
-      required: (v: string) => !!v || 'Field is required!',
-      length: (v: string) => v?.length > 7 || 'Minimal password length is 8 characters!',
+      required: (v: string) => !!v || i18n.t('ERROR_VALID_REQ').toString(),
+      length: (v: string) => v?.length > 7 || i18n.t('ERROR_VALID_PWD_LEN').toString(),
+      email: (v: string) => {
+        const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        return pattern.test(v) || i18n.t('ERROR_VALID_EMAIL').toString();
+      },
     },
   }),
   methods: {
@@ -24,16 +31,24 @@ export default Vue.extend({
       return this.password === v || 'Passwords must be equal!';
     },
     async registration() {
+      this.loading = true;
       const form: any = this.$refs.regForm;
-      if (form.validate()) {
-        const userData: registerPayload = {
-          username: this.username,
-          password: this.password,
-          firstName: this.firstName,
-          lastName: this.lastName,
-          gender: this.gender,
-        };
-        await this.$store.dispatch('registration', userData).catch((err) => console.log(err));
+      try {
+        if (form.validate()) {
+          const userData: registerPayload = {
+            username: this.username,
+            password: this.password,
+            firstName: this.firstName,
+            lastName: this.lastName,
+            gender: this.gender,
+            email: this.email,
+          };
+          await this.$store.dispatch('registration', userData).catch((err) => console.log(err));
+        }
+      } catch (e) {
+        console.log(e);
+      } finally {
+        this.loading = false;
       }
     },
   },

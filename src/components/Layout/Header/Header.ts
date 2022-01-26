@@ -10,9 +10,11 @@ export default Vue.extend({
   methods: {
     changeTheme() {
       this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+      document.documentElement.className = this.$vuetify.theme.dark ? 'dark' : '';
     },
     changeLang() {
       this.$i18n.locale = this.$i18n.locale === 'en' ? 'ru' : 'en';
+      localStorage.setItem('lang', this.$i18n.locale);
     },
     setNavVis() {
       this.$store.commit('setNavVisibility');

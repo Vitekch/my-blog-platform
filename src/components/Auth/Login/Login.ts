@@ -1,3 +1,4 @@
+import i18n from '@/plugins/i18n';
 import { loginPayload } from '@/types/auth-types';
 import Vue from 'vue';
 
@@ -10,8 +11,7 @@ export default Vue.extend({
     password: '',
     loading: false,
     rules: {
-      required: (v: string) => !!v || 'Field is required!',
-      length: (v: string) => v.length > 7 || 'Minimal password length is 8 characters!',
+      required: (v: string) => !!v || i18n.t('ERROR_VALID_REQ'),
     },
   }),
   methods: {
@@ -31,6 +31,10 @@ export default Vue.extend({
           await this.$store.dispatch('login', userData);
           this.$router.push('/');
         }
+      } catch (e: any) {
+        this.$store.commit('setMessageText', e.message);
+        this.$store.commit('setMessageVis', true);
+        this.$store.commit('setMessageType', 'error');
       } finally {
         this.loading = false;
       }

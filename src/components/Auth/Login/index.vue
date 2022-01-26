@@ -5,7 +5,7 @@
         v-model="username"
         dense
         required
-        :rules="[ rules.required ]"
+        :rules="[rules.required]"
         :label="$t('USERNAME')"
         class="mb-2"
         color="var(--accent)"
@@ -16,7 +16,7 @@
         :type="isPasswordHide ? 'password' : 'text'"
         dense
         required
-        :rules="[ rules.required, rules.length  ]"
+        :rules="[rules.required]"
         :label="$t('PASSWORD')"
         class="mb-5"
         color="var(--accent)"
@@ -31,9 +31,9 @@
           </v-icon>
         </v-btn>
       </v-text-field>
-      <div class="d-flex align-end">
+      <div class="d-flex align-center">
         <span class="text-caption text--secondary">
-            {{ $t('HAVENT_AN_ACCOUNT') }}
+            {{ $t('HAVENT_AN_ACCOUNT') }}<br>
             <router-link to="/auth/Registration">
               {{ $t('REGISTRATION_NOW') }}!
             </router-link>

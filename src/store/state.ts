@@ -1,5 +1,9 @@
 export default {
   isNavVisible: false,
-  lang: 'default',
+  message: {
+    isMessageActive: false,
+    text: '',
+    type: '',
+  },
   user: null,
 };
