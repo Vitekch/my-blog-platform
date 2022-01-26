@@ -5,19 +5,43 @@
       ref="regForm"
       class="d-flex flex-column mx-10 mt-10 mb-10"
     >
-      <v-text-field
-        v-model="username"
-        dense
-        required
-        :rules="[rules.required]"
-        :label="$t('USERNAME')"
-        class="mb-2"
-        color="var(--accent)"
-      >
-      </v-text-field>
       <v-container class="d-flex flex-column mb-2 pa-0">
         <v-row>
-          <v-col cols="6">
+          <v-col
+            lg="5"
+            sm="12"
+            md="12"
+            cols="12"
+          >
+            <v-text-field
+              v-model="username"
+              dense
+              required
+              :rules="[rules.required]"
+              :label="$t('USERNAME')"
+              class="mb-2"
+              color="var(--accent)"
+            >
+            </v-text-field>
+          </v-col>
+          <v-col lg="7" sm="12" md="12"  cols="12">
+            <v-text-field
+              type="email"
+              v-model="email"
+              dense
+              required
+              :rules="[rules.required, rules.email]"
+              label="E-mail"
+              class="mb-2"
+              color="var(--accent)"
+            >
+            </v-text-field>
+          </v-col>
+        </v-row>
+      </v-container>
+      <v-container class="d-flex flex-column mb-2 pa-0">
+        <v-row>
+          <v-col lg="6" sm="12" cols="12">
             <v-text-field
               v-model="firstName"
               dense
@@ -28,7 +52,7 @@
             >
             </v-text-field>
           </v-col>
-          <v-col cols="6">
+          <v-col lg="6" sm="12"  cols="12">
             <v-text-field
               v-model="lastName"
               dense
@@ -89,7 +113,7 @@
         color="var(--accent)"
       >
       </v-text-field>
-      <div class="d-flex align-end">
+      <div class="d-flex align-center">
         <span class="text-caption text--secondary">
             {{ $t('HAVE_AN_ACCOUNT') }}
             <router-link to="/auth/Login">
@@ -98,6 +122,7 @@
         </span>
         <v-spacer></v-spacer>
         <v-btn
+            :loading="loading"
             type="submit"
             dark
             color="var(--accent)"

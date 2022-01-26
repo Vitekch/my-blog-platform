@@ -1,6 +1,6 @@
 <template>
 <div class="d-flex justify-center align-center" style="height: 80vh">
-  <v-card width="40%">
+  <v-card min-width="400px" max-width="50%">
     <v-app-bar
       dark
       prominent

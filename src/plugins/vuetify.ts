@@ -8,6 +8,7 @@ import en from 'vuetify/lib/locale/en';
 Vue.use(Vuetify);
 
 export default new Vuetify({
+  theme: { dark: false },
   lang: {
     locales: { ru, en },
     current: 'en',
