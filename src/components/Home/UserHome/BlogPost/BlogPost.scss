@@ -1,0 +1,16 @@
+.post-body {
+ background-color: var(--v-blogPostBg-base) !important;
+}
+
+.caption {
+ &-1 {
+  height: normal;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 0.35px;
+ }
+ &-2 {
+  color: var(--secondary);
+  font-size: 12px;
+ }
+}

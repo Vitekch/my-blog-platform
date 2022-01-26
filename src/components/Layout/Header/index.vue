@@ -4,6 +4,7 @@
       dense
       elevation="2"
     >
+    <!-- <v-app-bar-nav-icon @click="setNavVis" class="hidden-lg-only"></v-app-bar-nav-icon> -->
     <v-app-bar-nav-icon @click="setNavVis"></v-app-bar-nav-icon>
     <v-spacer></v-spacer>
     <v-btn

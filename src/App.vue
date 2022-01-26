@@ -36,22 +36,22 @@ export default Vue.extend({
 
 <style lang="scss">
   :root{
-    --accent: #00796B;
     --accent-light: #80CBC4;
     --scrollbar: #DFDFDF;
     --scrollbar-thumb: #7c7c7c;
+    --blog-post-bg: rgba(0, 0, 0, .05);
   }
   :root.dark{
-    --accent: #00897B;
     --scrollbar: #202020;
     --scrollbar-thumb: #4d4d4d;
+    --blog-post-bg: rgba(255, 255, 255, .05);
   }
   .filtered-img{
     filter: blur(1px);
     transform: scale(1.2);
   }
   a{
-    color: var(--accent) !important;
+    color: var(--v-primary-base) !important;
   }
   ::-webkit-scrollbar{
     width: 10px;
@@ -59,7 +59,7 @@ export default Vue.extend({
     background-color: var(--scrollbar);
   }
   ::-webkit-scrollbar-thumb{
-    border: 2px solid var(--scrollbar);
+    border: 3px solid var(--scrollbar);
     border-radius: 5px;
     background-color: var(--scrollbar-thumb);
   }

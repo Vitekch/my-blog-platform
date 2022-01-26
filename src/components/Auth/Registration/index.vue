@@ -20,7 +20,6 @@
               :rules="[rules.required]"
               :label="$t('USERNAME')"
               class="mb-2"
-              color="var(--accent)"
             >
             </v-text-field>
           </v-col>
@@ -33,7 +32,6 @@
               :rules="[rules.required, rules.email]"
               label="E-mail"
               class="mb-2"
-              color="var(--accent)"
             >
             </v-text-field>
           </v-col>
@@ -48,7 +46,6 @@
               required
               :rules="[rules.required]"
               :label="$t('FIRST_N')"
-              color="var(--accent)"
             >
             </v-text-field>
           </v-col>
@@ -57,7 +54,6 @@
               v-model="lastName"
               dense
               :label="$t('LAST_N')"
-              color="var(--accent)"
             >
             </v-text-field>
           </v-col>
@@ -71,12 +67,12 @@
               <v-radio
                 :label="$t('FEMALE')"
                 value="female"
-                color="var(--accent)"
+
               ></v-radio>
               <v-radio
                 :label="$t('MALE')"
                 value="male"
-                color="var(--accent)"
+
               ></v-radio>
             </v-radio-group>
           </v-col>
@@ -90,7 +86,6 @@
         :rules="[rules.length, rules.required]"
         :label="$t('PASSWORD')"
         class="mb-5"
-        color="var(--accent)"
       >
         <v-btn
             slot="append"
@@ -110,7 +105,6 @@
         required
         :label="$t('CONFIRM_P')"
         class="mb-5"
-        color="var(--accent)"
       >
       </v-text-field>
       <div class="d-flex align-center">
@@ -125,9 +119,9 @@
             :loading="loading"
             type="submit"
             dark
-            color="var(--accent)"
             depressed
             class="text-none"
+            color="primary"
         >
             {{ $t('SUBMIT') }}
         </v-btn>

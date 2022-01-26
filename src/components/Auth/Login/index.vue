@@ -8,7 +8,6 @@
         :rules="[rules.required]"
         :label="$t('USERNAME')"
         class="mb-2"
-        color="var(--accent)"
       >
       </v-text-field>
       <v-text-field
@@ -19,7 +18,6 @@
         :rules="[rules.required]"
         :label="$t('PASSWORD')"
         class="mb-5"
-        color="var(--accent)"
       >
         <v-btn
             slot="append"
@@ -43,10 +41,10 @@
             width="70px"
             type="submit"
             dark
-            color="var(--accent)"
             depressed
             class="text-none"
             :loading="loading"
+            color="primary"
         >
             {{ $t('LOGIN') }}
         </v-btn>

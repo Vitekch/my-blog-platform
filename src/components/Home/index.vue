@@ -1,5 +1,6 @@
 <template>
-  <div class="text-h1 d-flex justify-center align-center" style="height: 80vh;">
+  <UserHome v-if="user" />
+  <div class="text-h1 d-flex justify-center align-center" style="height: 80vh;" v-else>
     Hello, stranger...
   </div>
 </template>
