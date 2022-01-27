@@ -5,19 +5,15 @@
       height="80vh"
       outlined class="d-flex flex-column justify-space-between overflow-auto pa-4"
     >
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
-      <BlogPost />
+      <BlogPost
+        v-for="(item, idx) in postsData"
+        :key="idx"
+        :user="item.user"
+        :date="item.date"
+        :content="item.content"
+      />
     </v-card>
+    <ImageFullView />
   </div>
 </template>
 
