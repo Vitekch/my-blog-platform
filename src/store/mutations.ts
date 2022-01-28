@@ -14,4 +14,13 @@ export default {
   setMessageText(state: any, payload: string) {
     state.message.text = payload;
   },
+  setFullImg(state: any, payload: string) {
+    state.fullContentImg = payload;
+  },
+  setImageViewVisible(state: any, payload: boolean) {
+    state.isFullViewVisible = payload;
+  },
+  setAvatarChangeVisible(state: any, payload: boolean) {
+    state.isAvatarChangeVisible = payload;
+  },
 };

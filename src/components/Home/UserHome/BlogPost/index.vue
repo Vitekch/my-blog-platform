@@ -49,6 +49,7 @@
               class="rounded-lg"
               width="300px"
               aspect-ratio="1"
+              @click="openImage(img)"
             >
             </v-img>
           </v-col>

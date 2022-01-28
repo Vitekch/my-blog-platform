@@ -8,7 +8,7 @@ export default Vue.extend({
   components: { BlogPost, ImageFullView },
   data: () => ({
     postsData,
+    isFullViewVisible: false,
+    img: '',
   }),
-  methods: {
-  },
 });

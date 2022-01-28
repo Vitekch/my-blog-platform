@@ -2,8 +2,12 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: 'ImageFullView',
-  props: ['img'],
   data: () => ({
-    isActive: false,
+    isHovered: false,
   }),
+  computed: {
+    img() {
+      return this.$store.state.fullContentImg;
+    },
+  },
 });

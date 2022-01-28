@@ -2,6 +2,8 @@ export default {
   ru: {
     LOGIN: 'Войти',
     LOGOUT: 'Выйти',
+    ACCOUNT: 'Аккаунт',
+    NEWS: 'Обновления',
     HAVE_AN_ACCOUNT: 'Уже зарегистрированны?',
     HAVENT_AN_ACCOUNT: 'Еще не зарегестрированы?',
     USERNAME: 'Имя пользователя',
@@ -26,6 +28,8 @@ export default {
   en: {
     LOGIN: 'Sign In',
     LOGOUT: 'Sign Out',
+    ACCOUNT: 'Account',
+    NEWS: 'News',
     HAVE_AN_ACCOUNT: 'Already have an account?',
     HAVENT_AN_ACCOUNT: 'Dont have an account?',
     USERNAME: 'Username',

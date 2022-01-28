@@ -15,10 +15,14 @@ export default new Vuetify({
       light: {
         primary: colors.teal.darken2,
         blogPostBg: '#fafafa',
+        buttonsGray1: colors.grey.darken4,
+        buttonsGray2: colors.grey.darken3,
       },
       dark: {
         primary: colors.teal.darken1,
         blogPostBg: '#2d2d2d',
+        buttonsGray1: colors.grey.lighten3,
+        buttonsGray2: colors.grey.lighten2,
       },
     },
   },

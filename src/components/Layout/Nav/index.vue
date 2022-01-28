@@ -9,23 +9,32 @@
       nav
       dense
     >
-      <!-- <v-list-item-group>
-        <v-list-item>
-          <v-list-item-title>Foo</v-list-item-title>
+      <v-list-item-group>
+        <v-list-item
+          @click="account"
+        >
+          <v-list-item-icon>
+            <v-icon>
+              mdi-account-circle
+            </v-icon>
+          </v-list-item-icon>
+          <v-list-item-action-text>
+            {{$t('ACCOUNT')}}
+          </v-list-item-action-text>
         </v-list-item>
-
-        <v-list-item>
-          <v-list-item-title>Bar</v-list-item-title>
+        <v-list-item
+          @click="news"
+        >
+          <v-list-item-icon>
+            <v-icon>
+              mdi-newspaper-variant
+            </v-icon>
+          </v-list-item-icon>
+          <v-list-item-action-text>
+            {{$t('NEWS')}}
+          </v-list-item-action-text>
         </v-list-item>
-
-        <v-list-item>
-          <v-list-item-title>Fizz</v-list-item-title>
-        </v-list-item>
-
-        <v-list-item>
-          <v-list-item-title>Buzz</v-list-item-title>
-        </v-list-item>
-      </v-list-item-group> -->
+      </v-list-item-group>
     </v-list>
   </v-navigation-drawer>
 </template>

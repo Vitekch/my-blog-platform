@@ -8,4 +8,10 @@ export default Vue.extend({
   data: () => ({
     isActive: true,
   }),
+  methods: {
+    openImage(src: string) {
+      this.$store.commit('setFullImg', src);
+      this.$store.commit('setImageViewVisible', true);
+    },
+  },
 });

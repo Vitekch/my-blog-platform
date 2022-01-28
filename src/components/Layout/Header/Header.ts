@@ -22,6 +22,12 @@ export default Vue.extend({
     login() {
       this.$router.push('/auth/Login');
     },
+    account() {
+      this.$router.push('/account/me');
+    },
+    news() {
+      this.$router.push('/');
+    },
     async logout() {
       await this.$store.dispatch('logout');
       this.$router.push('/auth/Login');
