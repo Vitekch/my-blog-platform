@@ -3,7 +3,7 @@ export default {
     state.isNavVisible = !state.isNavVisible;
   },
   setUser(state: any) {
-    state.user = localStorage.getItem('user');
+    state.user = JSON.parse(localStorage.getItem('user'));
   },
   setMessageVis(state: any, payload: boolean) {
     state.message.isMessageActive = payload;

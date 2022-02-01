@@ -10,9 +10,9 @@ export default Vue.extend({
     imageFile: '',
 
   }),
-  //TODO: Рефактор
   methods: {
     selectFile(e) {
+      // TODO: Рефактор
       if (this.file !== undefined) {
         this.imageName = this.file.name;
         const fr = new FileReader();
@@ -25,6 +25,13 @@ export default Vue.extend({
         this.imageName = '';
         this.imageFile = '';
         this.imageUrl = '';
+      }
+    },
+    uploadFile() {
+      try {
+        this.$store.dispatch('setAvatar', this.file);
+      } catch (e) {
+        console.log(e);
       }
     },
   },

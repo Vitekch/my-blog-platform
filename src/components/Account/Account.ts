@@ -22,8 +22,8 @@ export default Vue.extend({
         const userData = JSON.parse(user);
         if (un === 'me') {
           this.username = userData.username;
-          this.firstName = userData.first_name;
-          this.lastName = userData.last_name;
+          this.firstName = userData.firstName;
+          this.lastName = userData.lastName;
         }
       }
     },

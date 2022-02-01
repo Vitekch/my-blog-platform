@@ -3,7 +3,12 @@
     size="200"
     color="accent"
   >
-    <v-icon size="100" dark>
+    <v-img
+      :src="avatarUrl"
+      v-if="avatarUrl"
+    >
+    </v-img>
+    <v-icon size="100" dark v-else>
         mdi-account
     </v-icon>
   </v-avatar>

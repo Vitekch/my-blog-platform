@@ -40,6 +40,7 @@
             <v-col cols="4" class="d-flex align-end">
               <v-btn
                 color="primary"
+                @click="uploadFile"
               >
                 {{$t('SUBMIT')}}
               </v-btn>

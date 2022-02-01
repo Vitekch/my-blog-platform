@@ -1,5 +1,5 @@
 import i18n from '@/plugins/i18n';
-import fs from '../firestore/firestore';
+import fs, { storage } from '../firestore/firestore';
 import { loginPayload, registerPayload } from '../types/auth-types';
 
 export default {
@@ -34,5 +34,16 @@ export default {
   logout(context) {
     localStorage.removeItem('user');
     context.commit('setUser');
+  },
+  async setAvatar(context, payload: File) {
+    const { user } = context.state;
+    console.log(user);
+    const avatarRef = await storage.ref(`users/avatars/${user.username}.jpg`);
+    await avatarRef.put(payload);
+  },
+  async getAvatar(context) {
+    const { user } = context.state;
+    const avatarRef = await storage.ref(`users/avatars/${user.username}.jpg`);
+    return avatarRef.getDownloadURL();
   },
 };
