@@ -23,4 +23,7 @@ export default {
   setAvatarChangeVisible(state: any, payload: boolean) {
     state.isAvatarChangeVisible = payload;
   },
+  setPostAddVisible(state: any, payload: boolean) {
+    state.isPostAddVisible = payload;
+  },
 };

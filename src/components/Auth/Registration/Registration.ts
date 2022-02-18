@@ -22,6 +22,8 @@ export default Vue.extend({
         return pattern.test(v) || i18n.t('ERROR_VALID_EMAIL').toString();
       },
     },
+    error: '',
+    errorIsVisible: false,
   }),
   methods: {
     switchPasswordHide() {
@@ -43,10 +45,12 @@ export default Vue.extend({
             gender: this.gender,
             email: this.email,
           };
-          await this.$store.dispatch('registration', userData).catch((err) => console.log(err));
+          this.$store.dispatch('registration', userData)
+            .then(() => {
+              this.$router.push('/auth/Login');
+            })
+            .catch((err) => { this.error = err.message; this.errorIsVisible = true; });
         }
-      } catch (e) {
-        console.log(e);
       } finally {
         this.loading = false;
       }

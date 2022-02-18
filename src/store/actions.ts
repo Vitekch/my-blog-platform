@@ -37,13 +37,24 @@ export default {
   },
   async setAvatar(context, payload: File) {
     const { user } = context.state;
-    console.log(user);
     const avatarRef = await storage.ref(`users/avatars/${user.username}.jpg`);
     await avatarRef.put(payload);
   },
-  async getAvatar(context) {
-    const { user } = context.state;
-    const avatarRef = await storage.ref(`users/avatars/${user.username}.jpg`);
+  async getAvatar(context, payload: string) {
+    const avatarRef = await storage.ref(`users/avatars/${payload}.jpg`);
     return avatarRef.getDownloadURL();
+  },
+  async getUser(context, payload: string) {
+    const users = await fs.collection('users');
+    const user = await users.where('username', '==', payload).get();
+    const userData = await user.docs[0]?.data();
+    if (!userData) {
+      throw new Error(i18n.t('ERROR_UNAME').toString());
+    }
+    return {
+      username: userData.username,
+      firstName: userData.firstName,
+      lastName: userData.lastName,
+    };
   },
 };

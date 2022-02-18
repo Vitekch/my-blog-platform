@@ -1,9 +1,10 @@
 import Vue from 'vue';
 
 export default Vue.extend({
-  name: 'MyAvatar',
-  props: ['avatarUrl'],
+  name: 'PostAdd',
   data: () => ({
-    loading: false,
+    isHovered: false,
   }),
+  methods: {
+  },
 });

@@ -127,6 +127,23 @@
         </v-btn>
       </div>
     </v-form>
+    <v-snackbar
+      v-model="errorIsVisible"
+      dark
+      color="error"
+    >
+      {{ error }}
+
+      <template v-slot:action="{ attrs }">
+        <v-btn
+          outlined
+          v-bind="attrs"
+          @click="errorIsVisible = false"
+        >
+          OK
+        </v-btn>
+      </template>
+    </v-snackbar>
   </div>
 </template>
 
