@@ -2,6 +2,11 @@
   <v-card outlined class="post-body ma-4">
     <v-card-title>
     <v-container>
+      <v-row>
+        <v-col>
+          <h2 class="text-h3">{{ title }}</h2>
+        </v-col>
+      </v-row>
       <v-row class="d-flex align-start pa-2">
         <v-col class="d-flex align-end pa-0">
           <v-avatar size="40" color="accent">
@@ -36,25 +41,6 @@
     <v-divider></v-divider>
     <v-card-text>
       <pre v-if="content.text" class="pa-3">{{content.text}}</pre>
-      <v-container>
-        <v-row>
-          <v-col
-            v-for="(img, idx) in content.imgs"
-            :key="idx"
-            class="d-flex child-flex"
-            cols="4"
-          >
-            <v-img
-              :src="img"
-              class="rounded-lg"
-              width="300px"
-              aspect-ratio="1"
-              @click="openImage(img)"
-            >
-            </v-img>
-          </v-col>
-        </v-row>
-      </v-container>
     </v-card-text>
   </v-card>
 </template>

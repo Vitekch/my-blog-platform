@@ -2,6 +2,7 @@ import Vue from 'vue';
 import Avatar from './Avatar/index.vue';
 import AvatarChange from './AvatarChange/index.vue';
 import PostAdd from './PostAdd/index.vue';
+import BlogPost from '../Home/UserHome/BlogPost/index.vue';
 
 export default Vue.extend({
   name: 'PersonalArea',
@@ -11,6 +12,7 @@ export default Vue.extend({
     firstName: '',
     lastName: '',
     avatarUrl: '',
+    posts: [],
   }),
   beforeRouteUpdate(from, to, next) {
     this.setData(from.params.urlUsername);
@@ -51,8 +53,14 @@ export default Vue.extend({
       return false;
     },
   },
-  mounted() {
+  async mounted() {
     this.setData(this.urlUsername);
+    this.posts = await this.$store.dispatch('getUserPosts', this.urlUsername);
   },
-  components: { Avatar, AvatarChange, PostAdd },
+  components: {
+    Avatar,
+    AvatarChange,
+    PostAdd,
+    BlogPost,
+  },
 });

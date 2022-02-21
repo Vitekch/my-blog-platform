@@ -81,7 +81,17 @@
               </v-row>
               <v-divider class="my-3"></v-divider>
               <v-row>
-                <v-col></v-col>
+                <v-col>
+                  <BlogPost
+                    v-for="post in posts"
+                    :key="post.id"
+                    :title="post.title"
+                    :content="post.content"
+                    :tags="post.tags"
+                    :date="post.date"
+                    :user="username"
+                  />
+                </v-col>
               </v-row>
             </v-container>
           </v-card>

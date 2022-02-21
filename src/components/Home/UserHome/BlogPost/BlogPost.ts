@@ -4,7 +4,7 @@ import Tag from './Tag/index.vue';
 export default Vue.extend({
   name: 'BlogPost',
   components: { Tag },
-  props: ['user', 'date', 'content'],
+  props: ['user', 'date', 'content', 'title'],
   data: () => ({
     isActive: true,
   }),

@@ -27,6 +27,8 @@ export default {
     if (payload.password !== userData.password) {
       throw new Error(i18n.t('ERROR_PWD').toString());
     }
+    delete userData.password;
+    userData.id = user.docs[0].id;
     localStorage.setItem('user', JSON.stringify(userData));
     context.commit('setUser');
     return true;
@@ -56,5 +58,34 @@ export default {
       firstName: userData.firstName,
       lastName: userData.lastName,
     };
+  },
+  async addPost(context, payload: any) {
+    const userData = localStorage.getItem('user');
+    const users = await fs.collection('users');
+    const user = users.doc(userData.id);
+    const posts = (await user.get()).data()?.posts || [];
+    const id = new Date();
+    user.set({
+      posts: [
+        ...posts,
+        {
+          id: id.getTime(),
+          ...payload,
+          date: (new Date())
+            .toLocaleString(),
+        },
+      ],
+    });
+  },
+  async getUserPosts(context, payload: string) {
+    const users = await fs.collection('users').where('username', '==', payload);
+    if (users) {
+      const posts = (await users.get())
+        .docs[0]
+        ?.data();
+      console.log(posts);
+      return posts;
+    }
+    return [];
   },
 };

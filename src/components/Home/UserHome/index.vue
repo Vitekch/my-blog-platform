@@ -19,6 +19,7 @@
             :user="item.user"
             :date="item.date"
             :content="item.content"
+            :title="item.title"
           />
         </v-card>
       </v-col>

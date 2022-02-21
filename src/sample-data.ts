@@ -1,5 +1,6 @@
 export const postsData = [
   {
+    title: 'Title',
     user: 'MaryLee',
     date: '26.01.2022',
     content: {
@@ -33,6 +34,7 @@ export const postsData = [
     },
   },
   {
+    title: 'Title',
     user: 'MaryLee',
     date: '26.01.2022',
     content: {
@@ -66,6 +68,7 @@ export const postsData = [
     },
   },
   {
+    title: 'Title',
     user: 'Angelo1987',
     date: '26.01.2022',
     content: {
@@ -85,6 +88,7 @@ export const postsData = [
     },
   },
   {
+    title: 'Title',
     user: '~-_$$Demon777$$_-~',
     date: '26.01.2022',
     content: {

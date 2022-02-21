@@ -19,7 +19,9 @@
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-card-title>
-      <v-form>
+      <v-form
+        @submit.prevent="addPost"
+      >
           <v-container>
             <v-row>
             <v-col>
@@ -39,8 +41,16 @@
                     </v-textarea>
                 </v-col>
             </v-row>
+            <v-row>
+            <v-col>
+                <v-text-field
+                    :label="$t('TAGS')"
+                    dense
+                >
+                </v-text-field>
+            </v-col>
+            </v-row>
           </v-container>
-      </v-form>
       <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn
@@ -53,6 +63,7 @@
             {{ $t('SUBMIT') }}
         </v-btn>
       </v-card-actions>
+      </v-form>
     </v-card>
   </v-dialog>
 </template>
